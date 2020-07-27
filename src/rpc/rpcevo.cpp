@@ -41,10 +41,10 @@ std::string GetHelpString(int nParamNum, std::string strParamName)
             "%d. \"collateralAddress\"        (string, required) The dash address to send the collateral to.\n"
         },
         {"collateralHash",
-            "%d. \"collateralHash\"           (string, required) The collateral transaction hash.\n"
+            "%d. \"collateralHash\"           (string, required) The txid of the 1000 Dash collateral funding transaction\n"
         },
         {"collateralIndex",
-            "%d. collateralIndex            (numeric, required) The collateral transaction output index.\n"
+            "%d. collateralIndex            (numeric, required) The output index of the 1000 Dash funding transaction\n"
         },
         {"feeSourceAddress",
             "%d. \"feeSourceAddress\"         (string, optional) If specified wallet will only use coins from this address to fund ProTx.\n"
@@ -70,12 +70,14 @@ std::string GetHelpString(int nParamNum, std::string strParamName)
             "                              If set to an empty string, the currently active payout address is reused.\n"
         },
         {"operatorPubKey_register",
-            "%d. \"operatorPubKey\"           (string, required) The operator BLS public key. The private key does not have to be known.\n"
-            "                              It has to match the private key which is later used when operating the masternode.\n"
+            "%d. \"operatorPubKey\"           (string, required) The operators BLS public key.\n"
+            "                              The BLS private key does not have to be known to the owner. It has to match\n"
+            "                              the BLS private key which is later used when using ProUpServTx.\n"
         },
         {"operatorPubKey_update",
-            "%d. \"operatorPubKey\"           (string, required) The operator BLS public key. The private key does not have to be known.\n"
-            "                              It has to match the private key which is later used when operating the masternode.\n"
+            "%d. \"operatorPubKey\"           (string, required) The operator BLS public key.\n"
+            "                              The private key does not have to be known. It has to match\n"
+            "                              the BLS private key which is later used when using ProUpServTx.\n"
             "                              If set to an empty string, the currently active operator BLS public key is reused.\n"
         },
         {"operatorReward",
